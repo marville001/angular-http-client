@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let employee of employees$ | async">
+      <th>{{ employee.id }}</th>
+      <th>{{ employee.name }}</th>
+      <th>{{ employee.email }}</th>
+      <th>{{ employee.gender }}</th>
+      <th><button (click)="deleteEmployee(employee.id)" class="btn btn-sm btn-danger">Delete</button></th>
+    </tr>
+  </tbody>
+
+  <div class="alert alert-danger mt-3" *ngIf="errorMessage">{{errorMessage}}</div>
+
+</table>
